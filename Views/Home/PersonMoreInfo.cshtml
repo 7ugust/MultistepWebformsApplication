@@ -1,0 +1,48 @@
+﻿@model WebformsApplication.Models.PersonMoreInfo
+
+@{
+    AjaxOptions options = new AjaxOptions();
+    options.HttpMethod = "POST";
+    options.InsertionMode = InsertionMode.Replace;
+    options.UpdateTargetId = "divContainer";
+}
+
+@using (Ajax.BeginForm("PersonMoreInfo", "Home", options))
+{
+    <h1>Step 2 : Person More Information</h1>
+    <fieldset>
+        <p>
+            @Html.LabelFor(m => m.street) 
+            @Html.TextBoxFor(m => m.street) 
+            @Html.ValidationMessageFor(m => m.street)
+        </p>
+        <p>
+            @Html.LabelFor(m => m.city) 
+            @Html.TextBoxFor(m => m.city) 
+            @Html.ValidationMessageFor(m => m.city)
+        </p>
+        <p>
+            @Html.LabelFor(m => m.state) 
+            @Html.TextBoxFor(m => m.state) 
+            @Html.ValidationMessageFor(m => m.state)
+        </p>
+        <p>
+            @Html.LabelFor(m => m.country) 
+            @Html.TextBoxFor(m => m.country) 
+            @Html.ValidationMessageFor(m => m.country)
+        </p>
+        <p>
+            @Html.LabelFor(m => m.postalcode) 
+            @Html.TextBoxFor(m => m.postalcode)
+        </p>
+        <p>
+            @Html.LabelFor(m => m.phone) 
+            @Html.TextBoxFor(m => m.phone) 
+            @Html.ValidationMessageFor(m => m.phone)
+        </p>
+        <p>
+            <input type="submit" name="nextBtn" value='Finish' class="btn-default" />
+            <input type="submit" name="previousBtn" value='Previous' class="btn-default" />
+        </p>
+    </fieldset>
+            }

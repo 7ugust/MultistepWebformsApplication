@@ -1,0 +1,28 @@
+﻿@model WebformsApplication.Models.PersonBasicInfo
+
+@{
+    AjaxOptions options = new AjaxOptions();
+    options.HttpMethod = "POST";
+    options.InsertionMode = InsertionMode.Replace;
+    options.UpdateTargetId = "divContainer";
+}
+
+@using (Ajax.BeginForm("PersonBasicInfo", "Home", options))
+{
+    <h1>Step 1 : Person Basic Information</h1>
+    <fieldset>
+        <p>
+            @Html.LabelFor(m => m.FirstName)
+            @Html.TextBoxFor(m => m.FirstName)
+            @Html.ValidationMessageFor(m => m.FirstName)
+        </p>
+        <p>
+            @Html.LabelFor(m => m.LastName) 
+            @Html.TextBoxFor(m => m.LastName) 
+            @Html.ValidationMessageFor(m => m.LastName)
+        </p>
+        <p>
+            <input type="submit" name="nextBtn" value='Next' class="btn-default" />
+        </p>
+    </fieldset>
+}

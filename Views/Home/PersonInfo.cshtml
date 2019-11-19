@@ -1,0 +1,31 @@
+﻿@model WebformsApplication.Models.Person
+@{
+    AjaxOptions options = new AjaxOptions();
+    options.HttpMethod = "GET";
+    options.InsertionMode = InsertionMode.Replace;
+    options.UpdateTargetId = "divContainer";
+}
+@using (Ajax.BeginForm("PersonInfo", "Home", options))
+{
+    <h1>Person Information</h1>
+    <fieldset>
+        <p>
+            @Html.DisplayNameFor(model => model.FirstName) <b>@Html.DisplayFor(model => model.FirstName)</b>
+        </p><p>
+            @Html.DisplayNameFor(model => model.LastName) <b>@Html.DisplayFor(model => model.LastName)</b>
+</p><p>
+            @Html.DisplayNameFor(model => model.street) <b>@Html.DisplayFor(model => model.street)</b>
+</p><p>
+            @Html.DisplayNameFor(model => model.city) <b>@Html.DisplayFor(model => model.city)</b>
+</p><p>
+            @Html.DisplayNameFor(model => model.state) <b>@Html.DisplayFor(model => model.state)</b>
+</p><p>
+            @Html.DisplayNameFor(model => model.country) <b>@Html.DisplayFor(model => model.country)</b>
+</p><p>
+            @Html.DisplayNameFor(model => model.postalcode) <b>@Html.DisplayFor(model => model.postalcode)</b>
+</p><p>
+            @Html.DisplayNameFor(model => model.phone) <b>@Html.DisplayFor(model => model.phone)</b>
+</p>
+    </fieldset>
+
+}
